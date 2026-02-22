@@ -16,18 +16,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const prompt = `Create an absurd and funny startup idea based on the word "${word}". 
+    const prompt = `Create an absurd and HILARIOUS startup idea based on the word "${word}". Make it funny but take it completely seriously like a real VC pitch. Be creative and unexpected!
     
-Format your response as JSON with the following structure (no markdown, just valid JSON):
+Format your response as JSON (no markdown, just valid JSON):
 {
-  "name": "A funny startup name (2-3 words, like 'Uber for X' style)",
-  "tagline": "A one-line funny tagline (max 10 words)",
-  "description": "A 2-3 sentence absurd business description that takes the idea seriously",
-  "funding": "A funny funding amount prediction (e.g., '$50M Series A')",
-  "logo": "A single emoji that represents the startup"
+  "name": "Funny startup name like 'Uber for X' or 'Netflix of Y' - be creative and unexpected (2-4 words)",
+  "tagline": "One witty tagline that's 8-12 words, clever and funny",
+  "description": "A 3-4 sentence absurd but detailed business pitch. Describe the problem, solution, and target market in the most ridiculous but serious way possible. Make it funny!",
+  "funding": "A hilariously large or small funding prediction like '$420M Series Z' or '$3 Seed Round'",
+  "logo": "A single emoji that perfectly represents this absurd startup"
 }
 
-Make it hilarious but coherent. The idea should be absurd but described seriously like a real pitch.`;
+Key: Make it FUNNY and absurd but write it like a serious business pitch. The contrast is what makes it hilarious. Be specific and creative!`;
 
     const message = await client.messages.create({
       model: 'claude-sonnet-4-6',
