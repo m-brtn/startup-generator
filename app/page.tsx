@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Heart, Copy, Share2, Zap } from 'lucide-react';
+import { useState } from 'react';
 
 interface StartupIdea {
   name: string;
@@ -103,8 +102,7 @@ export default function Home() {
               disabled={loading}
               className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-purple-500/50 disabled:opacity-50 transition-all flex items-center gap-2"
             >
-              <Zap size={18} />
-              {loading ? 'Creating...' : 'Generate'}
+              ⚡ {loading ? 'Creating...' : 'Generate'}
             </button>
             <button
               onClick={randomExample}
@@ -154,22 +152,19 @@ export default function Home() {
                       : 'bg-white bg-opacity-10 text-gray-300 hover:bg-opacity-20'
                   }`}
                 >
-                  <Heart size={18} fill={liked ? 'currentColor' : 'none'} />
-                  {liked ? 'Loved' : 'Like'}
+                  {liked ? '❤️' : '🤍'} {liked ? 'Loved' : 'Like'}
                 </button>
                 <button
                   onClick={copyToClipboard}
                   className="py-3 px-4 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg text-gray-300 font-semibold transition-all flex items-center justify-center gap-2"
                 >
-                  <Copy size={18} />
-                  {copied ? 'Copied!' : 'Copy'}
+                  📋 {copied ? 'Copied!' : 'Copy'}
                 </button>
                 <button
                   onClick={shareIdea}
                   className="py-3 px-4 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg text-gray-300 font-semibold transition-all flex items-center justify-center gap-2"
                 >
-                  <Share2 size={18} />
-                  Share
+                  🔗 Share
                 </button>
               </div>
             </div>
